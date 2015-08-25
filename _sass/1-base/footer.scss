@@ -1,0 +1,49 @@
+.row-footer {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	background-color: rgb(25,25,25);
+	.footer-logo {
+		img {
+			width: 100%;
+		}
+	}
+	ul.address {
+		font: 1.3rem $Montserrat;
+		text-align: center;
+		margin-top: 1rem;
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		list-style: none;
+		@include breakpoint(xs) {
+			padding-left: 0;
+		}
+	}
+	.social-links {
+		margin-top: 1rem;
+		text-align: center;
+		a {
+			color: $lightGray;
+			&:hover,&:focus {
+				color: darken($lightGray,10%);
+			}
+			.fa-inverse {
+				color: rgb(25,25,25);
+			}
+		}
+	}
+	.col-sm-6 {
+		@include breakpoint(xs) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+.row-copyright {
+	background-color: rgb(15,15,15);
+	h5 {
+		text-align: center;
+		font: 11px $Lato;
+		color: $gray;
+	}
+}

@@ -1,0 +1,283 @@
+@include header($darkGray, $gray);
+.home-slider {
+	background-color: $darkGray;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	.slide-img {
+		margin-bottom: -7.3rem;
+		@include breakpoint(xs) {
+			display: none;
+		}
+	}
+	.slide-nav {
+		background-color: $grayOpaque;
+		border-top: 10px solid $yellowOpaque;
+		margin-bottom: 0;
+		@include breakpoint(xs) {
+			background-color: #gray;
+		}
+		h2 {
+			width: 400px;
+			color: $white;
+			outline: none;
+			margin: 1rem 7rem 2rem 1rem;
+			@include breakpoint(sd) {
+				margin-left: 5rem;
+			}
+			@include breakpoint(xs) {
+				font-size: 1.8rem;
+			}
+		}
+		button {
+			&.slick-prev {
+				left: 69rem;
+				z-index: 10;
+				@include breakpoint(ml) {
+					left: 55rem;
+				}
+				@include breakpoint(sm) {
+					left: 65rem;
+				}
+				@include breakpoint(sd) {
+					left: 1rem;
+				}
+			}
+			&.slick-next {
+				right: 1rem;
+			}
+		}
+	}
+	.caption {
+		@include breakpoint(xs) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+.row-1 {
+	h1 {
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		margin-bottom: 4.8rem;
+		@include breakpoint(sm) {
+			margin-bottom: 2.5rem;
+		}
+		@include breakpoint(sd) {
+			margin-bottom: 2rem;
+		}
+		@include breakpoint(xs) {
+			text-align: center;
+		}
+	}
+	figure {
+		color: $gray;
+		float: right;
+		padding-left: 6rem;
+		@include breakpoint(sd) {
+			padding-left: 1.8rem;
+		}
+		@include breakpoint(xs) {
+			float: none;
+			padding-left: 1rem;
+			padding-right: 1rem;
+			img {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		figcaption {
+			text-transform: uppercase;
+			text-align: center;
+			margin: 1rem auto;
+			span {
+				text-transform: initial;
+				font-style: italic;
+				font-size: 95%;
+			}
+		}
+	}
+	.links {
+		@include breakpoint(xs) {
+			width: 100%;
+			margin-left: 15px;
+		}
+		* {
+			@include breakpoint(sd) {
+				text-align: center;
+			}
+			@include breakpoint(xs) {
+				width: 100%;
+			}
+		}
+		.about {
+			border-left: 1px solid $lightGray;
+			border-right: 1px solid $lightGray;
+			@include breakpoint(xs) {
+				border: none;
+			}
+		}
+	}
+	.mission {
+		@include breakpoint(sm) {
+			background-color: $bgGray;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		@include breakpoint(sd) {
+			background-color: $bgGray;
+			padding: 0;
+		}
+	}
+}
+.row-social {
+	font-family: $Montserrat;
+	background-color: $bgGray;
+	padding: 4rem 0 2rem;
+	margin-bottom: 5rem;
+	border-bottom: 2rem solid $bgBorder;
+	.twitter-wrap {
+		.fa {
+			float: left;
+			font-size: 7.5rem;
+			color: $skyBlue;
+			padding: 1rem;
+		}
+		small {
+			font-family: $Lato;
+			display: block;
+			margin-bottom: 1.5rem;
+		}
+	}
+	.social-icons {
+		font-size: 4rem;
+		padding: 2rem 0;
+		a {
+			color: $darkBlue;
+			&:hover {
+				color: lighten($darkBlue, 5%);
+			}
+		}
+	}
+}
+.row-2 .latest-news {
+	margin-bottom: 4rem;
+	a {
+		img {
+			width: 100%;
+		}
+		p {
+			color: darken($white, 5%);
+			font-family: $Montserrat;
+			background: $darkBlue;
+			line-height: 1.4;
+			padding: 1.5rem;
+			height: 130px;
+			@include breakpoint(sd) {
+				height: auto;
+			}
+		}
+	}
+}
+.row-2 .spotlight {
+	figure {
+		img {
+			width: 100%;
+		}
+		figcaption {
+			padding: 3rem 2rem;
+			background-color: $gray;
+			h3 {
+				font-size: 1.5rem;
+				color: $skyBlue;
+				text-transform: uppercase;
+				margin-top: 0;
+			}
+			p {
+				small {
+					display: block;
+					font-family: $Montserrat;
+					text-transform: uppercase;
+					margin-top: 2.2rem;
+					.fa {
+						padding-left: 1rem;
+					}
+					a {
+						color: $yellow;
+						&:hover,
+						&:focus {
+							color: darken($yellow, 5%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.row-3 {
+	background-color: $darkBlue;
+	padding-left: 0;
+	@include breakpoint(sd) {
+		padding-right: 0;
+	}
+	.sponsors {
+		padding: 1rem 5rem 0;
+		@include breakpoint(sd) {
+			padding: 0;
+			text-align: center;
+		}
+		h2 {
+			font-size: 3.6rem;
+			font-weight: $bold;
+			color: $white;
+			text-transform: uppercase;
+			text-align: left;
+			@include breakpoint(sd) {
+				text-align: center;
+			}
+		}
+		img {
+			margin: 0 3px 10px;
+		}
+		a {
+			font: 11px $Montserrat;
+			color: $yellow;
+			text-transform: uppercase;
+			.fa {
+				padding-left: 1rem;
+			}
+			&:hover, &:focus {
+				color: darken($yellow,5%);
+			}
+		}
+	}
+}
+.row-4 {
+	ul {
+		font-size: 1.3rem;
+		padding-left: 15px;
+		padding-right: 15px;
+		columns: 4;
+		-webkit-columns: 4;
+		-moz-columns: 4;
+		list-style: none;
+		@include breakpoint(md) {
+			columns: 2;
+			-webkit-columns: 2;
+			-moz-columns: 2;
+		}
+		@include breakpoint(xs) {
+			columns: 1;
+			-webkit-columns: 1;
+			-moz-columns: 1;
+		}
+		li {
+			&:before {
+				color: $skyBlue;
+				font-family: 'FontAwesome';
+				content: "\f101";
+				padding-right: 1rem;
+			}
+		}
+	}
+}

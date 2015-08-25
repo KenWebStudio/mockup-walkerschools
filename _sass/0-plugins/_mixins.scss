@@ -1,0 +1,130 @@
+@mixin header($mainBG, $subnavBG) {
+	header {
+		background-color: $mainBG;
+		.logo-wrap {
+			padding-top: 3.5rem;
+			padding-bottom: 3.5rem;
+			img {
+				display: block;
+				@include breakpoint(ml) {
+					width: 100%;
+				}
+				@include breakpoint(sm) {
+					margin: auto;
+				}
+				@include breakpoint(xs) {
+					width: 100%;
+				}
+			}
+		}
+		.subnav-wrap {
+			text-align: right;
+			section {
+				text-align: left;
+				font: 12px $Lato;
+				background-color: $subnavBG;
+				display: inline-block;
+				padding: 2.4rem 2rem 2.5rem;
+				min-width: 140px;
+				h4 {
+					font-size: 1.5rem;
+					color: lighten($gray, 10%);
+					text-transform: lowercase;
+					margin-bottom: 2rem;
+				}
+				ul {
+					li {
+						a {
+							color: $lightGray;
+							padding: 0;
+							&:hover,
+							&:focus {
+								color: $skyBlue;
+								background-color: transparent;
+							}
+						}
+					}
+				}
+				&:hover,
+				&:focus {
+					padding-top: 2rem;
+					border-top: 4px solid $skyBlue;
+					h4 {
+						color: $skyBlue;
+					}
+				}
+				@include breakpoint(ml) {
+					min-width: auto;
+				}
+			}
+			@include breakpoint(sm) {
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+// MEDIA QUERIES
+@mixin breakpoint($point) {
+	//Large devices (1200px and up)
+	@if $point==lu {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	}
+	//Large devices (1200px and down)
+	@else if $point==ld {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	}
+	//Large devices to Medium devices (1200px to 992px)
+	@else if $point==ml {
+		@media (max-width: 1200px) and (min-width: 992px) {
+			@content;
+		}
+	}
+	//Medium devices (992px and up)
+	@else if $point==mu {
+		@media (min-width: 992px) {
+			@content;
+		}
+	}
+	//Medium devices (992px and down)
+	@else if $point==md {
+		@media (max-width: 992px) {
+			@content;
+		}
+	}
+	//Medium devices to Small devices (992px to 768px)
+	@else if $point==sm {
+		@media (max-width: 992px) and (min-width: 768px) {
+			@content;
+		}
+	}
+	//Small devices (768px and up)
+	@else if $point==su {
+		@media (min-width: 768px) {
+			@content;
+		}
+	}
+	//Small devices (768px and down)
+	@else if $point==sd {
+		@media (max-width: 768px) {
+			@content;
+		}
+	}
+	@else if $point==ss {
+		@media (max-width: 768px) and (min-width: 500px) {
+			@content;
+		}
+	}
+	
+	//Extra Small devices (500px and down)
+	@else if $point==xs {
+		@media (max-width: 500px) {
+			@content;
+		}
+	}
+}

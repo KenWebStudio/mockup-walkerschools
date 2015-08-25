@@ -1,0 +1,54 @@
+.main-nav {
+	background-color: $darkBlue;
+	font: 1.2rem $Montserrat;
+	border-radius: 0;
+	
+	.container {
+		@include breakpoint(sm) {
+			width: 100%;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+	.navbar-header button.navbar-toggle { color: $yellow; }
+	
+	p {
+		color: $white;
+		text-transform: uppercase;
+		font-weight: $bold;
+		img {
+			padding-right: 1rem;
+		}
+	}
+	.navbar-brand, .navbar-nav {
+		color: $yellow;
+		text-transform: uppercase;
+		li {
+			border-right: 1px solid darken($darkBlue, 10%);
+			@include breakpoint(sd) {border-right: none;}
+		}
+		a {
+			color: inherit;
+			.fa {
+				padding-left: 1.2rem;
+			}
+			&:hover, &:focus {
+				background-color: transparent;
+			}
+		}
+	}
+	.navbar-brand {
+		border-left: 1px solid darken($darkBlue, 10%);
+		border-right: 1px solid darken($darkBlue, 10%);
+		margin-left: 0 !important;
+		@include breakpoint(sm) {
+			margin-left:-7px !important;
+		}
+		@include breakpoint(sd) {
+			border: none;
+		}
+	}
+	.navbar-text {
+		margin-bottom: 0;
+	}
+}
